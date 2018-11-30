@@ -1,0 +1,22 @@
+2018年11月30日 21:33:17  信息 : -------------网关启动完毕-------------------
+2018年11月30日 21:36:05  信息 : -------------网关启动完毕-------------------
+2018年11月30日 21:40:27  信息 : -------------网关启动完毕-------------------
+2018年11月30日 21:40:43  信息 : 已装载共享库/Users/caroceanjofers/studio/lns.github.com/cj.studio.gateway.examples.backend/cmdtools/gateway/lib/share
+2018年11月30日 21:40:43  警告: cj.studio.gateway.examples.backend.usercenter.AppSiteProgram - webview被声明为Scope.singleon模式，推荐将webview声明为多例或运行时服务。webview：/,在 class cj.studio.gateway.examples.backend.usercenter.restfull.HomeRF
+2018年11月30日 21:41:24  信息 : -------------网关启动完毕-------------------
+2018年11月30日 21:41:26  信息 : 已装载共享库/Users/caroceanjofers/studio/lns.github.com/cj.studio.gateway.examples.backend/cmdtools/gateway/lib/share
+2018年11月30日 21:41:36  信息 : -------------网关启动完毕-------------------
+2018年11月30日 21:41:37  信息 : 已装载共享库/Users/caroceanjofers/studio/lns.github.com/cj.studio.gateway.examples.backend/cmdtools/gateway/lib/share
+2018年11月30日 21:42:41  信息 : -------------网关启动完毕-------------------
+2018年11月30日 21:48:11  错误: cj.studio.gateway.server.handler.HttpChannelHandler - 404 簇中缺少目标:website
+2018年11月30日 21:48:26  错误: cj.studio.gateway.server.handler.HttpChannelHandler - 404 簇中缺少目标:website
+2018年11月30日 21:48:41  错误: cj.studio.gateway.server.handler.HttpChannelHandler - 404 簇中缺少目标:website
+2018年11月30日 21:49:38  信息 : 已装载共享库/Users/caroceanjofers/studio/lns.github.com/cj.studio.gateway.examples.backend/cmdtools/gateway/lib/share
+2018年11月30日 21:52:05  信息 : -------------网关启动完毕-------------------
+2018年11月30日 21:52:07  信息 : 已装载共享库/Users/caroceanjofers/studio/lns.github.com/cj.studio.gateway.examples.backend/cmdtools/gateway/lib/share
+2018年11月30日 21:52:38  信息 : -------------网关启动完毕-------------------
+2018年11月30日 21:52:40  信息 : 已装载共享库/Users/caroceanjofers/studio/lns.github.com/cj.studio.gateway.examples.backend/cmdtools/gateway/lib/share
+2018年11月30日 21:53:25  信息 : -------------网关启动完毕-------------------
+2018年11月30日 21:53:33  信息 : 已装载共享库/Users/caroceanjofers/studio/lns.github.com/cj.studio.gateway.examples.backend/cmdtools/gateway/lib/share
+2018年11月30日 21:57:11  错误: cj.studio.gateway.server.handler.HttpChannelHandler - 404 簇中缺少目标:uctcp
+2018年11月30日 21:57:26  错误: cj.studio.gateway.server.handler.HttpChannelHandler - 404 簇中缺少目标:uctcp
