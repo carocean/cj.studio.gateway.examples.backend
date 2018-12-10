@@ -7,6 +7,7 @@
 	<classpathentry sourcepath="/Users/caroceanjofers/.gradle/caches/modules-2/files-2.1/junit/junit/4.8.2/cccca612a66b8387c399be31d69daf000de2ac9e/junit-4.8.2-sources.jar" kind="lib" path="/Users/caroceanjofers/.gradle/caches/modules-2/files-2.1/junit/junit/4.8.2/c94f54227b08100974c36170dcb53329435fe5ad/junit-4.8.2.jar" exported="true"/>
 	<classpathentry kind="lib" path="/Users/caroceanjofers/studio/lns.github.com/cj.studio.gateway.examples.backend/global/runtime/jsoup-1.8.1.jar" exported="true"/>
 	<classpathentry kind="lib" path="/Users/caroceanjofers/studio/lns.github.com/cj.studio.gateway.examples.backend/global/runtime/javax.persistence-2.1.0.jar" exported="true"/>
+	<classpathentry kind="lib" path="/Users/caroceanjofers/studio/lns.github.com/cj.studio.gateway.examples.backend/global/runtime/okhttp-3.12.0.jar" exported="true"/>
 	<classpathentry kind="lib" path="/Users/caroceanjofers/studio/lns.github.com/cj.studio.gateway.examples.backend/global/runtime/slf4j-log4j12-1.7.7.jar" exported="true"/>
 	<classpathentry kind="lib" path="/Users/caroceanjofers/studio/lns.github.com/cj.studio.gateway.examples.backend/global/runtime/log4j-1.2.17.jar" exported="true"/>
 	<classpathentry kind="lib" path="/Users/caroceanjofers/studio/lns.github.com/cj.studio.gateway.examples.backend/global/runtime/slf4j-api-1.7.7.jar" exported="true"/>
@@ -14,6 +15,7 @@
 	<classpathentry kind="lib" path="/Users/caroceanjofers/studio/lns.github.com/cj.studio.gateway.examples.backend/global/runtime/commons-pool2-2.3.jar" exported="true"/>
 	<classpathentry kind="lib" path="/Users/caroceanjofers/studio/lns.github.com/cj.studio.gateway.examples.backend/global/runtime/barchart-udt-bundle-2.3.0.jar" exported="true"/>
 	<classpathentry kind="lib" path="/Users/caroceanjofers/studio/lns.github.com/cj.studio.gateway.examples.backend/global/runtime/netty-all-5.0.0.Alpha1.jar" exported="true"/>
+	<classpathentry kind="lib" path="/Users/caroceanjofers/studio/lns.github.com/cj.studio.gateway.examples.backend/global/runtime/okio-1.15.0.jar" exported="true"/>
 	<classpathentry kind="lib" path="/Users/caroceanjofers/studio/lns.github.com/cj.studio.gateway.examples.backend/global/runtime/barchart-http-server-1.1.6.jar" exported="true"/>
 	<classpathentry kind="lib" path="/Users/caroceanjofers/studio/lns.github.com/cj.studio.gateway.examples.backend/global/runtime/barchart-udt-core-2.3.0.jar" exported="true"/>
 	<classpathentry kind="lib" path="/Users/caroceanjofers/studio/lns.github.com/cj.studio.gateway.examples.backend/global/cjtools/cj.studio.gateway.socket-1.0.jar" exported="true"/>
