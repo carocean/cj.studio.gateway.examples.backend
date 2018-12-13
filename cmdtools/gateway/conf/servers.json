@@ -1,1 +1,1 @@
-[{"name":"httpSite","protocol":"http","host":"localhost:9090","props":{}}]
+[{"name":"httpWS","protocol":"ws","host":"localhost:9091","props":{}},{"name":"httpSite","protocol":"http","host":"localhost:9090","props":{}}]
