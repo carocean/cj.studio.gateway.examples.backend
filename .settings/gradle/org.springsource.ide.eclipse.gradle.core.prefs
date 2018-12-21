@@ -1,5 +1,5 @@
 #org.springsource.ide.eclipse.gradle.core.preferences.GradleProjectPreferences
-#Fri Nov 30 21:28:49 CST 2018
-build.family.org.gradle.tooling.model.eclipse.HierarchicalEclipseProject=;cj.studio.gateway.examples.backend.debug;cj.studio.gateway.examples.backend.usercenter;
+#Mon Dec 17 01:11:50 CST 2018
+build.family.org.gradle.tooling.model.eclipse.HierarchicalEclipseProject=;cj.studio.gateway.examples.backend.debug;cj.studio.gateway.examples.backend.usercenter;cj.studio.gateway.examples.backend.usercenter.plugin;cj.studio.gateway.examples.backend.usercenter.stub;
 org.springsource.ide.eclipse.gradle.linkedresources=
 org.springsource.ide.eclipse.gradle.rootprojectloc=

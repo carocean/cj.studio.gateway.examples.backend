@@ -1,2 +1,4 @@
 include "cj.studio.gateway.examples.backend.usercenter"
 include "cj.studio.gateway.examples.backend.debug"
+include "cj.studio.gateway.examples.backend.usercenter.plugin"
+include "cj.studio.gateway.examples.backend.usercenter.stub"

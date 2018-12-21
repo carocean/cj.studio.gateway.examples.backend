@@ -57,9 +57,10 @@ subprojects {
 }
 task release(type: Copy) {
  		doLast {
-			println 'frontend 环境发布完毕!'
+			println 'backends 环境发布完毕!'
 		}
 }
+release.dependsOn ":cj.studio.gateway.examples.backend.usercenter.stub:release"
 release.dependsOn ":cj.studio.gateway.examples.backend.usercenter:release"
-
+release.dependsOn ":cj.studio.gateway.examples.backend.usercenter.plugin:release"
 

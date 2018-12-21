@@ -18,14 +18,14 @@ sourceSets {
  } 
 
 dependencies {
-	//compile fileTree('../global/jee.runtime')
+	compile project(':cj.studio.gateway.examples.backend.usercenter.stub');
 	compile fileTree('../global/runtime')
 	compile fileTree('../global/cjtools')
 	//compile fileTree('src/cj/references')
 	
 }
 task releaseToHost(type: Copy) {
- dependsOn "build"
+ dependsOn "build",":cj.studio.gateway.examples.backend.usercenter.stub:release"
  from 'build/libs/'
 into '../cmdtools/gateway/assemblies/usercenter'
  include '**/*.jar'
