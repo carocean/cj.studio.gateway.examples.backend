@@ -1,7 +1,7 @@
 package cj.studio.gateway.examples.backend.usercenter.bo;
 
 public class UserBO {
-	String id;
+	long id;
 	String name;
 	int age;
 	public int getAge() {
@@ -10,10 +10,10 @@ public class UserBO {
 	public void setAge(int age) {
 		this.age = age;
 	}
-	public String getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	public String getName() {

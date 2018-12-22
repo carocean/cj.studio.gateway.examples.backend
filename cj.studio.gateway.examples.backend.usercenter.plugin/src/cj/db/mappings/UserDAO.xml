@@ -3,11 +3,12 @@
 <mapper namespace="cj.studio.gateway.examples.uc.plugin.dao.IUserDAO">
 
 	<resultMap id="resultMap" type="cj.studio.gateway.examples.backend.usercenter.bo.UserBO">
-		<result column="id" property="id" jdbcType="CHAR" />
+		<result column="id" property="id" jdbcType="INTEGER" />
 		<result column="name" property="name" jdbcType="CHAR" />
+		<result column="age" property="age" jdbcType="INTEGER" />
 	</resultMap>
 	<!--添加 -->
-	<insert id="save" parameterType="cj.studio.gateway.examples.backend.usercenter.bo.UserBO">
+	<insert id="save" useGeneratedKeys="true" keyProperty="id" parameterType="cj.studio.gateway.examples.backend.usercenter.bo.UserBO">
 		insert INTO user(id,name,age) VALUES(#{id},#{name},#{age})
 	</insert>
 	<!--查询 -->
@@ -17,11 +18,11 @@
 	<select id="query2" resultMap="resultMap">
 		select * from user where name=#{name} and age=#{age}
 	</select>
-	<select id="getUser" resultType="cj.studio.gateway.examples.backend.usercenter.bo.UserBO" parameterType="java.lang.String">
+	<select id="getUser" resultType="cj.studio.gateway.examples.backend.usercenter.bo.UserBO" parameterType="java.lang.Long">
 		select * from user where id=#{id}
 	</select>
 	<!--删除 -->
-	<delete id="delete" parameterType="java.lang.String">
+	<delete id="delete" parameterType="java.lang.Long">
 		delete from user where
 		id=#{id,jdbcType=CHAR}
 	</delete>

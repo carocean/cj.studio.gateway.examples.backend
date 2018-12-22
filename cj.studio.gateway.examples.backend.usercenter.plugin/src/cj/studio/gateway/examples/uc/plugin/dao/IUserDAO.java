@@ -7,9 +7,9 @@ import org.apache.ibatis.annotations.Param;
 import cj.studio.gateway.examples.backend.usercenter.bo.UserBO;
 
 public interface IUserDAO {
-	void save(UserBO bo);
-	void delete(String id);
+	long save(UserBO bo);
+	void delete(long id);
 	List<UserBO> query();
-	UserBO getUser(String id);
+	UserBO getUser(long id);
 	List<UserBO> query2(@Param(value="name")String name, @Param(value="age")int age);
 }

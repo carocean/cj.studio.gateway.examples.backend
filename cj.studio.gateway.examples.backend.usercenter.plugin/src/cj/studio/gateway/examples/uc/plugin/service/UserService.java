@@ -18,13 +18,14 @@ public class UserService implements IUserService {
 
 	@CjTransaction
 	@Override
-	public void save(UserBO bo) {
-		userDAO.save(bo);
+	public long save(UserBO bo) {
+		 userDAO.save(bo);
+		 return bo.getId();
 	}
 
 	@CjTransaction
 	@Override
-	public void delete(String id) {
+	public void delete(long id) {
 		userDAO.delete(id);
 	}
 	@CjTransaction
@@ -39,7 +40,7 @@ public class UserService implements IUserService {
 	}
 	@CjTransaction
 	@Override
-	public UserBO getUser(String id) {
+	public UserBO getUser(long id) {
 		return userDAO.getUser(id);
 	}
 }

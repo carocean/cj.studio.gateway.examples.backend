@@ -5,13 +5,13 @@ import java.util.List;
 import cj.studio.gateway.examples.backend.usercenter.bo.UserBO;
 
 public interface IUserService {
-	void save(UserBO bo);
+	long save(UserBO bo);
 
-	void delete(String id);
+	void delete(long id);
 
 	List<UserBO> query();
 
-	UserBO getUser(String id);
+	UserBO getUser(long id);
 
 	List<UserBO> query(String name, int age);
 }
