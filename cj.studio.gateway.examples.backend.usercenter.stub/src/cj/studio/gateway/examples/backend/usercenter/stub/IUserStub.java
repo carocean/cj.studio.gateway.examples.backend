@@ -13,7 +13,7 @@ import cj.studio.gateway.stub.annotation.CjStubService;
 
 @CjStubService(bindService = "/user/", usage = "用户管理")
 public interface IUserStub {
-	@CjStubMethod(alias = "save", command = "get", protocol = "http/1.1", usage = "保存")
+	@CjStubMethod(alias = "save", command = "post", protocol = "http/1.1", usage = "保存")
 	void save(@CjStubInContent(usage = "用户实体UserBO") UserBO bo);
 
 	@CjStubMethod(alias = "delete", command = "get", protocol = "http/1.1", usage = "保存")
@@ -22,6 +22,11 @@ public interface IUserStub {
 	@CjStubMethod(alias = "query", command = "get", protocol = "http/1.1", usage = "保存")
 	@CjStubReturn(type = ArrayList.class, usage = "返回用户列表")
 	List<UserBO> query();
+
+	@CjStubMethod(alias = "query2", command = "get", protocol = "http/1.1", usage = "保存")
+	@CjStubReturn(type = ArrayList.class, usage = "返回用户列表")
+	List<UserBO> query(@CjStubInParameter(key = "name", usage = "姓名") String name,
+			@CjStubInParameter(key = "age", usage = "年龄") int age);
 
 	@CjStubMethod(alias = "getUser", protocol = "http/1.1", command = "get", usage = "获取用户")
 	@CjStubReturn(usage = "xxx", type = String.class)

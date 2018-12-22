@@ -8,11 +8,14 @@
 	</resultMap>
 	<!--添加 -->
 	<insert id="save" parameterType="cj.studio.gateway.examples.backend.usercenter.bo.UserBO">
-		insert INTO user(id,name) VALUES(#{id},#{name})
+		insert INTO user(id,name,age) VALUES(#{id},#{name},#{age})
 	</insert>
 	<!--查询 -->
 	<select id="query" resultMap="resultMap">
 		select * from user
+	</select>
+	<select id="query2" resultMap="resultMap">
+		select * from user where name=#{name} and age=#{age}
 	</select>
 	<select id="getUser" resultType="cj.studio.gateway.examples.backend.usercenter.bo.UserBO" parameterType="java.lang.String">
 		select * from user where id=#{id}

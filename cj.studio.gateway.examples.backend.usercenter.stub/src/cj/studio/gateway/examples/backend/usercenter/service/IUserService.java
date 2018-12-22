@@ -12,4 +12,6 @@ public interface IUserService {
 	List<UserBO> query();
 
 	UserBO getUser(String id);
+
+	List<UserBO> query(String name, int age);
 }

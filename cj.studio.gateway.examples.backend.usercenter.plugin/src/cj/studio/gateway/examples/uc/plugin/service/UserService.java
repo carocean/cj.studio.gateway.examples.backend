@@ -10,7 +10,7 @@ import cj.studio.gateway.examples.backend.usercenter.service.IUserService;
 import cj.studio.gateway.examples.uc.plugin.dao.IUserDAO;
 import cj.studio.orm.mybatis.annotation.CjTransaction;
 
-@CjBridge(aspects = "transaction")
+@CjBridge(aspects = "@transaction")
 @CjService(name = "user")
 public class UserService implements IUserService {
 	@CjServiceRef(refByName = "mybatis.cj.studio.gateway.examples.uc.plugin.dao.IUserDAO")
@@ -27,7 +27,11 @@ public class UserService implements IUserService {
 	public void delete(String id) {
 		userDAO.delete(id);
 	}
-
+	@CjTransaction
+	@Override
+	public List<UserBO> query(String name, int age) {
+		return userDAO.query2(name,age);
+	}
 	@CjTransaction
 	@Override
 	public List<UserBO> query() {

@@ -24,7 +24,10 @@ public class UserStub extends GatewayAppSiteRestStub implements IUserStub {
 	public void save(UserBO bo) {
 		user.save(bo);
 	}
-
+	@Override
+	public List<UserBO> query(String name, int age) {
+		return user.query(name,age);
+	}
 	@Override
 	public void delete(String id) {
 		user.delete(id);
