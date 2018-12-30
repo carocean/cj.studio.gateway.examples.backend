@@ -25,7 +25,6 @@ dependencies {
             'commons-cli:commons-cli:1.2'
     )
 	compile fileTree('../global/runtime')
-	compile fileTree('../global/cjmodules')
 	compile fileTree('../global/cjtools')
 	compile fileTree('src/cj/references')
 }
