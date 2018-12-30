@@ -18,6 +18,10 @@ public class DeptService implements  IDeptService{
 	@Override
 	public void save(DeptmentBO bo) {
 		cube.saveDoc("deptments", new TupleDocument<>(bo));
+		test t=new test();
+		t.name="cj";
+		t.value="xxx";
+		cube.saveDoc("test", new TupleDocument<>(t));
 	}
 
 	@Override
@@ -27,6 +31,8 @@ public class DeptService implements  IDeptService{
 		for(IDocument<DeptmentBO> doc:q.getResultList()) {
 			list.add(doc.tuple());
 		}
+		q=cube.createQuery("select {'tuple':'*'} from tuple test cj.studio.gateway.examples.uc.plugin.service.test where {}");
+		System.out.println("----"+q.getResultList().size());
 		return list;
 	}
 
