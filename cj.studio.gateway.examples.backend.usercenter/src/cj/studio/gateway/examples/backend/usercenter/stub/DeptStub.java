@@ -22,6 +22,11 @@ public class DeptStub extends GatewayAppSiteRestStub implements IDeptStub {
 	public List<DeptmentBO> getAll() {
 		return dept.getAll();
 	}
+
+	@Override
+	public void testArg(DeptmentBO bo) {
+		System.out.println(bo);
+	}
 	
 
 }
