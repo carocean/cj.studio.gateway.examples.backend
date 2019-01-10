@@ -17,4 +17,7 @@ public interface IDeptStub {
 	@CjStubMethod(usage = "xx")
 	@CjStubReturn(type = ArrayList.class, usage = "xx")
 	List<DeptmentBO> getAll();
+	
+	@CjStubMethod(usage = "xx",command="post")
+	void testArg(@CjStubInContent(usage="json格式")DeptmentBO bo);
 }
