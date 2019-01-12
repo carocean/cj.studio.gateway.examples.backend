@@ -1,26 +1,121 @@
 
 # Gateway2.0
 
-## 实现中...100%
-	已实现将Multipart的请求以内存的方式解析，但为了避免像tomcat/jetty这样的web容器存在的大文件上传上限问题和大文件上传必须接收到磁盘缓冲的问题，这种规避内存使用的方法性能和灵活性都不好。
-	gateway2.0要将数据接口开放给开发者，由开发者决定如何做，中间不做任何缓冲，这样便实现了文件无限制上传能力。
-	接下来还要实现的功能有：
-- http server：用于在多级网关中转发http块，中间不做任何和处理，这类似于ngnix和apache的功能。
-- 订阅式广播应用：多个网关向一个目标网关主题应用凝聚，主题收到消息即向各订阅结点分发，主题可由运维人员自建。该功能类似于memcache和zookeeper，其用途在于各网关节点的同步。
-- 为各种net协议加心跳机制。	
-- 微服务定义和客端调用机制，包括向指网关注册（任意网关均可作为微服务中心）。由于注册（报送微服务信息）、路由、发现、断路重连是网关的基本功能，所以微服务机制的实现可在2个工作日内完成。
-- 大规范测试。测试暂定于11月低进行。	
+## 此例程是Gateway2.0的中台微服务程序
+## 用法：
+	下载源码导入eclipse
+	配置eclipse 的gradle
+	运行cj.studio.gateway.examples.backend.debug项目中的main函数,此时一定报错，不必担心，打开debug选项，添加参数：
+	-debug /xx/xx/xx/cj.studio.gateway.examples.backend/cmdtools/gateway 此为gateway所在位置
 	
-	Gateway即可用于开发网站项目，也可用于开发微服务项目，称之为网关应用，在作为分布式平台使用时，支持微服务的注册、发现、路由、断路重试等功能。它可以发展为N层分布式架构，层级由运维人员自建。
- 	Gateway对于中小型互联网公司来说是一种福音，因为这类公司往往没有实力或者没有足够的资金投入去开发自己的分布式系统基础设施，使用Gateway一站式解决方案能在从容应对业务发展的同时大大减少开发成本。同时，随着近几年微服务架构和Docker容器概念的火爆，也会让Gateway在未来越来越“云”化的软件开发风格中立有一席之地，尤其是在目前五花八门的分布式解决方案中提供了标准化的、全站式的技术方案，意义可能会堪比当年Servlet规范的诞生，有效推进服务端软件系统技术水平的进步。
- 	
- 	cj.studio还有与之配套的以下产品:
- 	
- 	ecm开发工具包兼有spring、osgi、nodejs的功能。支持面向模块开发与部署，热插拔。 	
-	net开发工具包,支持web的开发，并且可以完全使用js开发web应用，它的语法更接近于流行的nodejs，其它功能包含有基于netty的nio也包含有自行开发的nio框架rio,rio叫响应式nio框架，它即有nio的优势，又有同步等待响应的能力。
-	plus开发工具包，进一步增强了连接的能力，如web应用的插件化（支持像eclipse这样的插件架构），支持像webservice这种远程服务的能力，支持云计算芯片的开发。
-	netdisk是基于mongodb的增强开发工具包，它实现了网盘的各种功能，支持文件随机存取及结构化数据存取，支持多维，用户配额，开发上类似sql语法支持、对象映射支持。
-	neuron工具，具有像tomcat/jetty等服务容器的功能，更多的是它具有向后连接的特性，是组建大型分布式神经网络的节点工具。它的目的就是组建神经网络集群。
-	mdisk命令行工具，它是以命令行窗口实现的网盘工具，以netdisk为核心，方便mongodb的开发、测试和运维管理。它用起来非常简单，只要连到你的mongodb即可将mongodb当成网盘数据库，且对原mongodb的库不受影响。
-	cjnet 用于调试neuron中的应用程序和netsite中的应用程序，它是一个cj studio产品系中有关net产品开发和调试必不可少的工具。
-	netsite也是一个像tomcat/jetty等服务容器的命令行工具，它与神经元的区别在于，它只能部署在神经网络的终端，而不能成为其中间节点。它的优点在于，它可以部署成百上千个应用，而在一个神经元节点上一般不这么做。此工具暂时停止了升级。
+## 访问：http://localhost:9090/uc/
+结果显示本中台程序内所含的微服务api,如下：
+
+******************************************************
+       usercenter
+         标识：3AD05D29-80AE-440B-AC52-C9D9150F9797
+         版本：1.0.0.0
+         产品：cj.studio.gateway.examples.backend.usercenter
+         公司：cj工作室
+         版权：Copyright 2011
+         描述：cj工作室出品，lns平台制造
+******************************************************
+/uc/dept/
+    cj.studio.gateway.examples.backend.usercenter.stub.IDeptStub
+    用法:部门管理
+
+    save
+        用法:xx
+        方法别名:
+        命令:post
+        协议:http/1.1
+        参数:
+                arg0
+                    类型:cj.studio.gateway.examples.backend.usercenter.bo.DeptmentBO
+                    方式：InContent
+                    用法:xx
+
+    testArg
+        用法:xx
+        方法别名:
+        命令:post
+        协议:http/1.1
+        参数:
+                arg0
+                    类型:cj.studio.gateway.examples.backend.usercenter.bo.DeptmentBO
+                    方式：InContent
+                    用法:json格式
+
+    getAll
+        用法:xx
+        返回值类型:java.util.ArrayList,说明:xx
+        方法别名:
+        命令:get
+        协议:http/1.1
+        参数:
+
+
+/uc/user/
+    cj.studio.gateway.examples.backend.usercenter.stub.IUserStub
+    用法:用户管理
+
+    delete
+        用法:保存
+        方法别名:delete
+        命令:get
+        协议:http/1.1
+        参数:
+                arg0
+                    类型:long
+                    方式：InHeader User-ID
+                    用法:用户标识
+
+    save
+        用法:保存
+        返回值类型:java.lang.Long,说明:返回自增长标识
+        方法别名:save
+        命令:post
+        协议:http/1.1
+        参数:
+                arg0
+                    类型:cj.studio.gateway.examples.backend.usercenter.bo.UserBO
+                    方式：InContent
+                    用法:用户实体UserBO
+
+    query
+        用法:保存
+        返回值类型:java.util.ArrayList,说明:返回用户列表
+        方法别名:query2
+        命令:get
+        协议:http/1.1
+        参数:
+                arg0
+                    类型:java.lang.String
+                    方式：InParameter name
+                    用法:姓名
+                arg1
+                    类型:int
+                    方式：InParameter age
+                    用法:年龄
+
+    query
+        用法:保存
+        返回值类型:java.util.ArrayList,说明:返回用户列表
+        方法别名:query
+        命令:get
+        协议:http/1.1
+        参数:
+
+    getUser
+        用法:获取用户
+        返回值类型:cj.studio.gateway.examples.backend.usercenter.bo.UserBO,说明:xxx
+        方法别名:getUser
+        命令:get
+        协议:http/1.1
+        参数:
+                arg0
+                    类型:long
+                    方式：InParameter id
+                    用法:xx
+
+
