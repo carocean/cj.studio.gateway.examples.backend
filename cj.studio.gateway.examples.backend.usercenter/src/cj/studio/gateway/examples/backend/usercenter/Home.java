@@ -9,7 +9,7 @@ import cj.studio.ecm.net.Circuit;
 import cj.studio.ecm.net.Frame;
 import cj.studio.gateway.socket.app.IGatewayAppSiteResource;
 import cj.studio.gateway.socket.util.SocketContants;
-import cj.studio.gateway.stub.annotation.CjStubInContent;
+import cj.studio.gateway.stub.annotation.CjStubInContentKey;
 import cj.studio.gateway.stub.annotation.CjStubInHead;
 import cj.studio.gateway.stub.annotation.CjStubInParameter;
 import cj.studio.gateway.stub.annotation.CjStubMethod;
@@ -47,11 +47,11 @@ public class Home extends PrintStubAppSiteWebView {
 	}
 
 	@Override
-	protected void onprintStubMethodArgInContent(CjStubInContent sic, Parameter p, Method m, Frame frame,
+	protected void onprintStubMethodArgInContent(CjStubInContentKey sic, Parameter p, Method m, Frame frame,
 			Circuit circuit, IGatewayAppSiteResource resource) {
 		circuit.content().writeBytes(String.format("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%s<br>", p.getName()).getBytes());
 		circuit.content().writeBytes(String.format("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类型:%s<br>", p.getType().getName()).getBytes());
-		circuit.content().writeBytes(String.format("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;方式：InContent<br>").getBytes());
+		circuit.content().writeBytes(String.format("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;方式：InContent %s<br>",sic.key()).getBytes());
 		circuit.content().writeBytes(String.format("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用法:%s<br>", sic.usage()).getBytes());
 
 	}

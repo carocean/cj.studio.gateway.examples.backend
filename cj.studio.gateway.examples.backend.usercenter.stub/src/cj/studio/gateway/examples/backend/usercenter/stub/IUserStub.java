@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cj.studio.gateway.examples.backend.usercenter.bo.UserBO;
-import cj.studio.gateway.stub.annotation.CjStubInContent;
+import cj.studio.gateway.stub.annotation.CjStubInContentKey;
 import cj.studio.gateway.stub.annotation.CjStubInHead;
 import cj.studio.gateway.stub.annotation.CjStubInParameter;
 import cj.studio.gateway.stub.annotation.CjStubMethod;
@@ -15,7 +15,7 @@ import cj.studio.gateway.stub.annotation.CjStubService;
 public interface IUserStub {
 	@CjStubMethod(alias = "save", command = "post", protocol = "http/1.1", usage = "保存")
 	@CjStubReturn(type=Long.class,usage="返回自增长标识")
-	long save(@CjStubInContent(usage = "用户实体UserBO") UserBO bo);
+	long save(@CjStubInContentKey(key="bo",usage = "用户实体UserBO") UserBO bo);
 
 	@CjStubMethod(alias = "delete", command = "get", protocol = "http/1.1", usage = "保存")
 	void delete(@CjStubInHead(key = "User-ID", usage = "用户标识") long id);
