@@ -63,4 +63,4 @@ task release(type: Copy) {
 release.dependsOn ":cj.studio.gateway.examples.backend.usercenter.stub:release"
 release.dependsOn ":cj.studio.gateway.examples.backend.usercenter:release"
 release.dependsOn ":cj.studio.gateway.examples.backend.usercenter.plugin:release"
-
+tasks.getByPath(':cj.studio.gateway.examples.backend.usercenter:release').mustRunAfter tasks.getByPath(':cj.studio.gateway.examples.backend.usercenter.stub:release')
