@@ -24,8 +24,9 @@ public class DeptStub extends GatewayAppSiteRestStub implements IDeptStub {
 	}
 
 	@Override
-	public void testArg(DeptmentBO bo) {
+	public int testArg(DeptmentBO bo) {
 		System.out.println(bo);
+		return 10;
 	}
 	
 

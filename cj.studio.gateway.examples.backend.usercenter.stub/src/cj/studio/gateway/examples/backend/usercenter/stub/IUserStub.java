@@ -25,7 +25,7 @@ public interface IUserStub {
 	List<UserBO> query();
 
 	@CjStubMethod(alias = "query2", command = "get", protocol = "http/1.1", usage = "保存")
-	@CjStubReturn(type = ArrayList.class, usage = "返回用户列表")
+	@CjStubReturn(type = ArrayList.class, elementType=UserBO.class,usage = "返回用户列表")
 	List<UserBO> query(@CjStubInParameter(key = "name", usage = "姓名") String name,
 			@CjStubInParameter(key = "age", usage = "年龄") int age);
 

@@ -15,9 +15,10 @@ public interface IDeptStub {
 	void save(@CjStubInContentKey(key="bo",usage = "xx") DeptmentBO bo);
 
 	@CjStubMethod(usage = "xx")
-	@CjStubReturn(type = ArrayList.class, usage = "xx")
+	@CjStubReturn(type = ArrayList.class,elementType=DeptmentBO.class, usage = "xx")
 	List<DeptmentBO> getAll();
 	
 	@CjStubMethod(usage = "xx",command="post")
-	void testArg(@CjStubInContentKey(key="bo",usage="json格式")DeptmentBO bo);
+	@CjStubReturn(type=Integer.class,usage="xx")
+	int testArg(@CjStubInContentKey(key="bo",usage="json格式")DeptmentBO bo);
 }
