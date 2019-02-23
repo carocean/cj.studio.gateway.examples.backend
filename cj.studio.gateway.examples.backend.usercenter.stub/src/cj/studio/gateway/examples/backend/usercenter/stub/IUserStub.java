@@ -21,7 +21,7 @@ public interface IUserStub {
 	void delete(@CjStubInHead(key = "User-ID", usage = "用户标识") long id);
 
 	@CjStubMethod(alias = "query", command = "get", protocol = "http/1.1", usage = "保存")
-	@CjStubReturn(type = ArrayList.class, usage = "返回用户列表")
+	@CjStubReturn(type = ArrayList.class,elementType=UserBO.class, usage = "返回用户列表")
 	List<UserBO> query();
 
 	@CjStubMethod(alias = "query2", command = "get", protocol = "http/1.1", usage = "保存")
