@@ -10,11 +10,9 @@ import cj.studio.ecm.net.Circuit;
 import cj.studio.ecm.net.CircuitException;
 import cj.studio.ecm.net.Frame;
 import cj.studio.ecm.net.IContentReciever;
-import cj.studio.ecm.net.IInputChannel;
+import cj.studio.ecm.net.ISegmentCircuitContent;
 import cj.studio.gateway.socket.app.IGatewayAppSiteResource;
 import cj.studio.gateway.socket.app.IGatewayAppSiteWayWebView;
-import cj.studio.gateway.socket.io.DefaultFeedbackToCircuit;
-import cj.studio.gateway.socket.io.IFeedback;
 
 @CjService(name = "/tcp2/", scope = Scope.multiton)
 public class TcpWebview implements IGatewayAppSiteWayWebView {
@@ -33,25 +31,20 @@ public class TcpWebview implements IGatewayAppSiteWayWebView {
 
 		frame.content().accept(new FileContentReciever());
 
+		ISegmentCircuitContent cc=circuit.content().segment();
 		// 发送头侦,头侦无内容
-		IFeedback feedback = new DefaultFeedbackToCircuit(circuit);
-		Frame first = feedback.createFirst("get /website/tcp/reciever/ net/1.0");
+		Frame first = cc.createFirst("get /website/tcp/reciever/ net/1.0");
 		first.head("test", "1323233");
-		feedback.commitFirst(first);
+		cc.writeBytes(first.toBytes());
 
 		// 发送内容侦，可以发送无限多次内容侦
-		IInputChannel incnt = feedback.createContent();
-		incnt.writeBytes("弑母少年被带离原生活环境 由相关部门管束\r\n".getBytes());
-		incnt.writeBytes("未成年人保护法修订 相关部门到湖南调研\r\n".getBytes());
-		incnt.writeBytes("醉酒男子抢夺出租车方向盘 被判刑3年\r\n".getBytes());
-		feedback.commitContent(incnt);
+		cc.writeBytes("弑母少年被带离原生活环境 由相关部门管束\r\n".getBytes());
+		cc.writeBytes("未成年人保护法修订 相关部门到湖南调研\r\n".getBytes());
+		cc.writeBytes("醉酒男子抢夺出租车方向盘 被判刑3年\r\n".getBytes());
 
 		// 发送结束侦
-		IInputChannel inlast = feedback.createLast();
-		inlast.writeBytes("1弑母少年被带离原生活环境 由相关部门管束\r\n".getBytes());
-		inlast.writeBytes("2未成年人保护法修订 相关部门到湖南调研\r\n".getBytes());
-		inlast.writeBytes("3醉酒男子抢夺出租车方向盘 被判刑3年\r\n".getBytes());
-		feedback.commitLast(inlast);
+		byte[] b="1弑母少年被带离原生活环境 由相关部门管束\r\n".getBytes();
+		cc.done(b,0,b.length);
 
 	}
 
