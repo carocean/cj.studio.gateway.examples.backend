@@ -19,8 +19,6 @@ sourceSets {
 
 dependencies {
 	compile fileTree('../global/runtime')
-	compile fileTree('../global/cjmodules')
-	compile fileTree('../global/cjtools')
 	compile fileTree('src/cj/refembeds')
 	compile fileTree('src/cj/references')
 }
@@ -30,6 +28,7 @@ dependencies {
  from 'build/libs/'
  into '../cj.studio.gateway.examples.backend.usercenter/src/cj/references'
  include '**/*.jar'
+ exclude '**/*-javadoc.jar','**/*-sources.jar'
  }
  task releaseToOutputs(type: Copy) {
  dependsOn "build"

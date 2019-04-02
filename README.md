@@ -2,6 +2,9 @@
 # Gateway2.0
 
 ## 此例程是Gateway2.0的中台微服务程序
+- 依赖微服务管理中心：/conf/mic-registry.json，如果想取消则设为失活
+- 依赖私服仓库（请下载到本地并安装nexus，建立netos宿主仓指定你下载的本地仓目录）https://github.com/carocean/cj.studio.nexus.artifact
+
 ## 用法：
 	下载源码导入eclipse
 	配置eclipse 的gradle
