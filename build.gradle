@@ -3,7 +3,7 @@ subprojects {
     apply plugin: 'java'
     apply plugin: 'eclipse'
 	apply plugin: 'maven'
-	version = '1.0'
+	version = engineer_version
     sourceSets { 
 	 main { 
 	 	java{
